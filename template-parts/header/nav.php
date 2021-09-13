@@ -8,7 +8,19 @@
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Navbar</a>
+	<?php
+		// if ( function_exists( 'the_custom_logo' ) ) {
+		// 	the_custom_logo();
+		// }
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+		
+		if ( has_custom_logo() ) {
+			echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+		} else {
+			echo '<h1>' . get_bloginfo('name') . '</h1>';
+		}
+	?>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
