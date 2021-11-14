@@ -25,10 +25,9 @@ get_header();
 						<?php
 					}
 					?>
-
 					<div class="row">
 						<?php
-						$index         = 0;
+						$index = 0;
 						$no_of_columns = 3;
 
 						while ( have_posts() ) : the_post();
