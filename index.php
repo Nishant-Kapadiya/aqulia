@@ -28,7 +28,7 @@ get_header();
 
 					<div class="row">
 						<?php
-						$index = 0;
+						$index         = 0;
 						$no_of_columns = 3;
 
 						while ( have_posts() ) : the_post();
@@ -38,12 +38,9 @@ get_header();
 								<div class="col-lg-4 col-md-6 col-sm-12">
 								<?php
 							}
-
-							?>
-							<h3><?php the_title(); ?></h3>
-							<p><?php the_content(); ?></p>
-							<?php
+							get_template_part( 'template-parts/content');
 							$index ++;
+
 							if ( 0 !== $index && 0 === $index % $no_of_columns ) {
 								?>
 								</div>
@@ -55,8 +52,8 @@ get_header();
 					</div>
 				</div>
 			<?php
-				else :
-					_e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+				else :					
+					get_template_part( 'template-parts/content-none');
 
 				endif;
 			?>
