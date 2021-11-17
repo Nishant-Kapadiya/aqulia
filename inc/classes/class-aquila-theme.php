@@ -17,6 +17,7 @@ class AQUILA_THEME {
 		// load class.
 		Assets::get_instance();
 		Menus::get_instance();
+		Meta_Boxes::get_instance();
 		$this->setup_hooks();
 	}
 
@@ -50,6 +51,11 @@ class AQUILA_THEME {
 
 		// Add the post-thumbnails
 		add_theme_support( 'post-thumbnails' );
+
+		/**
+		 * Register Image Size
+		 */
+		add_image_size( 'feature-thumbnail', 350, 233, true );
 
 		// Add the customize-selective-refresh-widgets
 		add_theme_support( 'customize-selective-refresh-widgets' );

@@ -14,10 +14,10 @@
             <a href="<?php echo esc_url( get_permalink() ); ?>">
                 <?php echo get_the_post_thumbnail(
                     $the_post_id,
-                    'feature-large',
+                    'feature-thumbnail',
                     [
                         'class' => 'attachment-featured-large size-featured-image',
-                        'size'   => '(max-width: 590px) 590px 425px'
+                        'size'   => '(max-width: 350px) 350px 233px'
                     ]
                     );
                 ?>
