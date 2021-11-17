@@ -102,7 +102,7 @@ class Meta_Boxes {
 		) {
 			return;
 		}
-        
+
         if ( array_key_exists( 'aquila_hide_title_field', $_POST ) ) {
 			update_post_meta(
 				$post_id,
